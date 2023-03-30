@@ -50,6 +50,20 @@ public class LinkedListProgram <T>{
 	    }	    
 	}
 	
+	public void deleteLast() {
+		
+		if(head == null) {    
+			System.out.println(" No node present");
+	    }else {
+	    	Node currnode = head;
+	    	while(currnode.next.next != null) {
+	    		currnode = currnode.next;
+	    	}
+	    	currnode.next = null;
+	    }	    
+	}
+	 
+	
 	public void print() {	        
 		Node curr_node = head;	        
 		while(curr_node != null){	    
@@ -71,6 +85,9 @@ public class LinkedListProgram <T>{
 		list.print();
 		
 		list.deleteFirst();
+		list.print();
+		
+		list.deleteLast();
 		list.print();
 		
 	}
