@@ -27,6 +27,19 @@ public class LinkedListProgram <T>{
 	    }	    
 	}
 	
+	public void insertion(T value, T data) {
+		Node newnode = new Node(data);
+		Node currnode = head;	        
+		while(currnode != null) {
+			if (currnode.data == value) {
+				newnode.next = currnode.next;
+				currnode.next = newnode;
+			}
+			currnode = currnode.next;
+		}
+		
+	}
+	
 	public void print() {	        
 		Node curr_node = head;	        
 		while(curr_node != null){	    
@@ -40,9 +53,11 @@ public class LinkedListProgram <T>{
 	        
 		LinkedListProgram list = new LinkedListProgram();
 		
-		list.append(56);	        
-		list.append(30);	       
+		list.append(56);	        	       
 		list.append(70);
+		list.print();
+		
+		list.insertion(56,30);
 		list.print();
 		
 	}
