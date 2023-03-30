@@ -40,6 +40,16 @@ public class LinkedListProgram <T>{
 		
 	}
 	
+	public void deleteFirst() {
+		
+		if(head == null) {    
+			System.out.println(" No node present");
+	    }else {
+	    	head = head.next;
+	    	
+	    }	    
+	}
+	
 	public void print() {	        
 		Node curr_node = head;	        
 		while(curr_node != null){	    
@@ -58,6 +68,9 @@ public class LinkedListProgram <T>{
 		list.print();
 		
 		list.insertion(56,30);
+		list.print();
+		
+		list.deleteFirst();
 		list.print();
 		
 	}
