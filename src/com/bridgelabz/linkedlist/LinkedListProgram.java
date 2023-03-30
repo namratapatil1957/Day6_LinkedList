@@ -14,14 +14,16 @@ public class LinkedListProgram <T>{
 	  
 	Node head = null;
 	
-	public void createNode (T data) {
+	public void append (T data) {
 		Node newnode = new Node(data);
-		
 		if(head == null) {    
 			head = newnode;
 	    }else {
-	    	newnode.next = head;
-	    	head = newnode;                	        
+	    	Node currnode = head;
+	    	while(currnode.next != null) {
+	    		currnode = currnode.next;    
+	    	}	            
+	    	currnode.next = newnode;	        
 	    }	    
 	}
 	
@@ -37,12 +39,10 @@ public class LinkedListProgram <T>{
 	public static void main(String[] args) {
 	        
 		LinkedListProgram list = new LinkedListProgram();
-	        
-	        
-		list.createNode(70);	        
-		list.createNode(30);	       
-		list.createNode(56);
 		
+		list.append(56);	        
+		list.append(30);	       
+		list.append(70);
 		list.print();
 		
 	}
